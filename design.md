@@ -27,7 +27,7 @@ The system follows a multi-region, cloud-native microservices architecture deplo
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────┐
 │                                    AWS Cloud                                       │
-│                                                                                 ___|   │
+│                                                                                 ___|   
 │  ┌─────────────────────────────────────┐  ┌────────────────────────────────    │
 │  │      Region A (Primary)             │  │      Region B (DR)              │  │
 │  │      us-east-1                      │  │      eu-west-1                  │  │
