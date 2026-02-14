@@ -1870,3 +1870,80 @@ Dashboards:
 {
   "certificationId": "cert-550e8400-e29b-41d4-a716-446655440001",
   "containerId": "ABCU1234567",
+  "requestId": "550e8400-e29b-41d4-a716-446655440000",
+  "issuedAt": "2026-02-14T10:32:30Z",
+  "expiresAt": "2026-05-15T10:32:30Z",
+  "issuedBy": "Port Authority - New York",
+  "issuingOfficer": "John Doe",
+  "issuingOfficerId": "officer-123",
+  "verificationResult": {
+    "status": "PASSED",
+    "checks": [...]
+  },
+  "digitalSignature": "SHA256:mno345...",
+  "signatureAlgorithm": "RSA-SHA256",
+  "certificatePdfUri": "s3://container-docs/certifications/cert-550e8400.pdf",
+  "status": "ACTIVE",
+  "metadata": {
+    "version": "1.0",
+    "standard": "ISO 28000",
+    "region": "us-east-1"
+  }
+}
+```
+
+**AuditLog**:
+```json
+{
+  "logId": "log-550e8400-e29b-41d4-a716-446655440002",
+  "timestamp": "2026-02-14T10:32:30Z",
+  "eventType": "CERTIFICATION_ISSUED",
+  "actorId": "officer-123",
+  "actorName": "John Doe",
+  "actorRole": "CERTIFICATION_AUTHORITY",
+  "containerId": "ABCU1234567",
+  "requestId": "550e8400-e29b-41d4-a716-446655440000",
+  "certificationId": "cert-550e8400-e29b-41d4-a716-446655440001",
+  "outcome": "SUCCESS",
+  "details": {
+    "action": "Certification issued after successful verification",
+    "ipAddress": "203.0.113.42",
+    "userAgent": "Mozilla/5.0...",
+    "location": "New York, USA"
+  },
+  "metadata": {
+    "region": "us-east-1",
+    "service": "certification-service",
+    "version": "1.0"
+  }
+}
+```
+
+### 8.2 Event Types
+
+**Verification Events**:
+- `VERIFICATION_REQUEST_SUBMITTED`
+- `VERIFICATION_IN_PROGRESS`
+- `VERIFICATION_COMPLETED`
+- `VERIFICATION_FAILED`
+
+**Certification Events**:
+- `CERTIFICATION_ISSUED`
+- `CERTIFICATION_RETRIEVED`
+- `CERTIFICATION_REVOKED`
+- `CERTIFICATION_EXPIRED`
+
+**Security Events**:
+- `AUTHENTICATION_SUCCESS`
+- `AUTHENTICATION_FAILED`
+- `AUTHORIZATION_DENIED`
+- `UNAUTHORIZED_ACCESS_ATTEMPT`
+
+**System Events**:
+- `SERVICE_STARTED`
+- `SERVICE_STOPPED`
+- `FAILOVER_INITIATED`
+- `FAILOVER_COMPLETED`
+- `BACKUP_COMPLETED`
+- `SCALING_EVENT`
+
