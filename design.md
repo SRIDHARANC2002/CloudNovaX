@@ -26,12 +26,12 @@ The system follows a multi-region, cloud-native microservices architecture deplo
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────┐
-│                                    AWS Cloud                                        │
-│                                                                                     │
-│  ┌──────────────────────────────────────┐  ┌──────────────────────────────────┐  │
-│  │      Region A (Primary)              │  │      Region B (DR)               │  │
-│  │      us-east-1                       │  │      eu-west-1                   │  │
-│  │                                      │  │                                  │  │
+│                                    AWS Cloud                                       │
+│                                                                                 ___|   │
+│  ┌──────────────────────────────────────┐  ┌─────────────────────────────────  │
+│  │      Region A (Primary)              │  │      Region B (DR)             │  │
+│  │      us-east-1                       │  │      eu-west-1                 │  │
+│  │                                      │  │                                │  │
 │  │  ┌────────────────────────────────┐ │  │ ┌────────────────────────────┐  │  │
 │  │  │  Amazon Route 53               │ │  │ │  Amazon Route 53           │  │  │
 │  │  │  (Global DNS + Health Checks)  │◄┼──┼─┤  (Failover Routing)        │  │  │
